@@ -109,7 +109,7 @@ const VideoHeroSection: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooki
                 loop playsInline muted={isMuted}
                 onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}
               >
-                <source src="/videoo.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/ddq88emcg/video/upload/v1771706143/IMG_4281_1_1_1_1_kluhcr.mp4" type="video/mp4" />
               </video>
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-20">
                 <button
