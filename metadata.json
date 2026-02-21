@@ -1,0 +1,8 @@
+
+{
+  "name": "María Emilia Nadef - Estrategia de Imagen Premium",
+  "description": "A high-end personal brand platform for a psychologist and image consultant, featuring a sophisticated editorial design, booking system, and admin dashboard.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

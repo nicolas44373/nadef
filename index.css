@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --onyx: #0A0A0A;
+  --pearl: #F9F6F2;
+  --gold: #D4AF37;
+  --fuchsia: #D10056;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--pearl);
+  color: var(--onyx);
+}
+
+.font-serif {
+  font-family: 'Cormorant', serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pearl);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fuchsia);
+}
+
+/* Utility classes */
+.mask-editorial {
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.calendar-day-selected {
+  background: var(--fuchsia) !important;
+  color: white !important;
+  border-color: var(--fuchsia) !important;
+}
+
+.btn-premium {
+  @apply py-5 px-12 bg-gradient-to-r from-onyx to-fuchsia text-white text-[10px] font-bold uppercase tracking-[0.3em] transition-all hover:shadow-2xl hover:scale-105;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation: fade-in 0.7s ease-out;
+}
+
+.slide-in-from-right {
+  animation: slide-in-from-right 0.5s ease-out;
+}
+
+.zoom-in {
+  animation: zoom-in 0.7s ease-out;
+}
+
+/* Tailwind custom colors */
+@layer base {
+  .text-onyx { color: var(--onyx); }
+  .text-pearl { color: var(--pearl); }
+  .text-gold { color: var(--gold); }
+  .text-fuchsia { color: var(--fuchsia); }
+  
+  .bg-onyx { background-color: var(--onyx); }
+  .bg-pearl { background-color: var(--pearl); }
+  .bg-gold { background-color: var(--gold); }
+  .bg-fuchsia { background-color: var(--fuchsia); }
+  
+  .border-onyx { border-color: var(--onyx); }
+  .border-pearl { border-color: var(--pearl); }
+  .border-gold { border-color: var(--gold); }
+  .border-fuchsia { border-color: var(--fuchsia); }
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--fuchsia);
+  color: white;
+}
