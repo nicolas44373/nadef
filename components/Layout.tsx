@@ -156,19 +156,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => (
           </span>
           <div className="flex flex-col space-y-2 md:space-y-3 lg:space-y-4 text-xs uppercase tracking-widest font-medium">
             <a
-              href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              href="https://www.instagram.com/eminadef?igsh=MTl2djRjZGRsbjN4aw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"
               className="flex items-center space-x-2 hover:text-fuchsia transition-colors"
             >
               <Instagram size={16} /> <span>Instagram</span>
             </a>
             <a
-              href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              href="https://youtube.com/@eminadef7121?si=DnByRAu0At7Gq5tG" target="_blank" rel="noopener noreferrer"
               className="flex items-center space-x-2 hover:text-fuchsia transition-colors"
             >
               <Youtube size={16} /> <span>YouTube</span>
             </a>
             <a
-              href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+              href="https://www.tiktok.com/@eminadef?_r=1&_t=ZS-947N1QGSfW3" target="_blank" rel="noopener noreferrer"
               className="flex items-center space-x-2 hover:text-fuchsia transition-colors"
             >
               <span className="font-bold text-sm">Tk</span> <span>TikTok</span>
