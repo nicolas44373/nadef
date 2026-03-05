@@ -303,9 +303,91 @@ const HomePage: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking }) =>
             onAction={onOpenBooking}
           />
         </div>
+
+        {/* Closet Edit — full-width card */}
+        <div className="mt-8 md:mt-12 lg:mt-16">
+          <ClosetServiceCard onAction={onOpenBooking} />
+        </div>
       </div>
     </section>
   </>
+);
+
+// ─── CLOSET SERVICE CARD ──────────────────────────────────────────────────────
+const ClosetServiceCard: React.FC<{ onAction: () => void }> = ({ onAction }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+    className="bg-white group overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100"
+  >
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+      {/* Image */}
+      <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
+        <img
+          src="./4.jpeg"
+          alt="Edición de Clóset & Asesoría de Estilo"
+          className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-onyx/20 group-hover:bg-fuchsia/10 transition-colors" />
+        <div className="absolute top-3 md:top-4 lg:top-6 left-3 md:left-4 lg:left-6 bg-white/90 backdrop-blur-md px-3 md:px-4 py-1.5 text-[9px] uppercase tracking-widest font-bold text-onyx">
+          Maui · Presencial
+        </div>
+        <div className="absolute bottom-4 left-4 bg-gold text-onyx px-4 py-2 shadow-lg">
+          <p className="text-[10px] uppercase tracking-[0.3em] font-bold">desde $50 USD / hora</p>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 md:p-10 lg:p-14 flex flex-col justify-center">
+        <span className="text-fuchsia font-bold text-[10px] md:text-xs uppercase tracking-widest mb-3 md:mb-4 block">
+          Experiencia Lifestyle · Maui
+        </span>
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-onyx mb-2 leading-tight">
+          Edición de Clóset &<br />
+          <span className="italic">Asesoría de Estilo</span>
+        </h3>
+        <p className="text-onyx/60 text-sm md:text-base lg:text-lg leading-relaxed mt-4 mb-6 md:mb-8">
+          Una renovación consciente del guardarropa que aporta claridad, intención y confianza al momento de vestirte. No es solo organizar — es alinear tu imagen con quien sos.
+        </p>
+
+        {/* Features grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8 lg:mb-10">
+          {[
+            'Evaluación y edición del guardarropa',
+            'Outfits completos con tus prendas',
+            'Guía: qué conservar, soltar o actualizar',
+            'Estilo casual, trabajo y eventos',
+            'Organización funcional y estética',
+            'Básicos faltantes sin presión de compra',
+          ].map((f, i) => (
+            <div key={i} className="flex items-start space-x-3 text-xs uppercase tracking-[0.15em] font-medium text-onyx/80">
+              <div className="w-2 h-2 bg-gold flex-shrink-0 mt-0.5" />
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Pricing note */}
+        <p className="text-[10px] uppercase tracking-widest text-onyx/40 mb-6 md:mb-8 border-t border-gray-100 pt-4 md:pt-6">
+          Reserva mínima 3 horas · Servicio privado y personalizado
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={onAction}
+            className="flex-1 py-4 md:py-5 bg-onyx text-pearl uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold transition-all hover:bg-fuchsia"
+          >
+            Agenda tu llamada →
+          </button>
+          <button
+            onClick={onAction}
+            className="flex-1 py-4 md:py-5 border-2 border-onyx text-onyx uppercase tracking-[0.2em] text-[10px] md:text-xs font-bold transition-all hover:bg-onyx hover:text-pearl"
+          >
+            Llamada de descubrimiento
+          </button>
+        </div>
+      </div>
+    </div>
+  </motion.div>
 );
 
 // ─── ADMIN PAGE ───────────────────────────────────────────────────────────────
